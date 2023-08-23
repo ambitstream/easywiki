@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
+import Layout from './Layout';
 import Results from './Results';
 
 const Search = () => {
@@ -16,18 +17,19 @@ const Search = () => {
                     console.error(error);
                 });
         }
+        if (!q.length) setResults([]);
     }, [q]);
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <p>Easywiki</p>
-                <div>
-                    <input type="text" value={q} onChange={e => setQ(e.target.value)} />
-                    <Results data={results} />
-                </div>
-            </header>
-        </div>
+        <Layout loading={false}>
+            <input
+                type="text"
+                className="search-input"
+                value={q}
+                onChange={e => setQ(e.target.value)}
+            />
+            <Results data={results} />
+        </Layout>
     );
 };
 

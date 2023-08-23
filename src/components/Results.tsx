@@ -11,13 +11,11 @@ const Results = ({ data }: Props) => {
     if (!data.length) return null;
 
     return (
-        <div>
+        <div className="reasults-holder">
            {data.map((item, i) =>
-               <div key={item.pageid + i}>
-                    <a href={`/?pageid=${item.pageid}`}>
-                        {item.title}
-                    </a>
-               </div>
+                <a href={`/?pageid=${item.pageid}`} key={item.pageid + i} className="result-item">
+                    {item.title}
+                </a>
             )}
         </div>
     );
