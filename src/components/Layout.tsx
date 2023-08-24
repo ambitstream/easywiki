@@ -2,18 +2,21 @@ import { PropsWithChildren } from 'react'
 import logo from '../images/logo.png';
 
 type LayoutProps = {
-  loading: false
+  loading: boolean
 }
 
 const Layout = (props: PropsWithChildren<LayoutProps>) => {
     return (
-        <div className="App">
-            <header className="app-header">
-                <img width={120} className="app-logo" src={logo} alt="Logo" />
-            </header>
-            <div className="body">
+        <div className="outer-wrapper">
+            <div className="inner-wrapper">
+                <header className="app-header">
+                    <img width={120} className="app-logo" src={logo} alt="Logo" />
+                </header>
                 {props.children}
-            </div>
+                </div>
+            {props.loading ?
+                <div className="loading"></div>
+            : ''}
         </div>
     );
 };

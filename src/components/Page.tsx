@@ -3,6 +3,8 @@ import OpenAI from "openai";
 import axios from "axios";
 import Layout from './Layout';
 
+import loadingGif from '../images/loading.gif';
+
 interface Props {
     pageId: string,
 };
@@ -10,6 +12,8 @@ interface Props {
 const Page = ({ pageId }: Props) => {
     const [title, setTitle] = useState('Page ' + pageId);
     const [content, setContent] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [thinking, setThinking] = useState(false);
 
     useEffect(() => {
         if (pageId === '307') {
@@ -28,6 +32,8 @@ const Page = ({ pageId }: Props) => {
             dangerouslyAllowBrowser: true
         });
 
+        setThinking(true);
+
         const chatCompletion = await openai.chat.completions.create({
             model: "gpt-3.5-turbo",
             messages: [{ role: 'user', content: 'Retell the following in three sentences: ' + text }],
@@ -38,9 +44,12 @@ const Page = ({ pageId }: Props) => {
         if (result) {
             setContent(result);
         }
+        setThinking(false);
     };
 
     function getWiki() {
+        setLoading(true);
+
         const params = {
             action: 'query',
             format: 'json',
@@ -55,17 +64,24 @@ const Page = ({ pageId }: Props) => {
                 const text = data.extract.slice(0, 10000);
 
                 setTitle(data.title);
+                setLoading(false);
+                // setContent('Abraham Lincoln was born in a log cabin in Kentucky to a poor family and was primarily self-educated. He became a lawyer and entered politics, eventually becoming the 16th president of the United States. Lincoln led the country through the Civil War, abolished slavery, and worked to preserve the Union.')
                 gptRequest(text);
             })
             .catch(error => {
                 console.error(error);
+                setLoading(false);
             });
     }
 
     return (
-        <Layout loading={false}>
+        <Layout loading={loading}>
             <h3>{title}</h3>
-            <div>{content}</div>
+            <div>
+                {thinking ?
+                    <img width={20} src={loadingGif} />
+                : content}
+            </div>
             <div className="page-footer">
                 <a href="/">&larr; Back</a>
                 {title ?

@@ -1,14 +1,12 @@
 body {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   font-size: 16px;
   line-height: 27px;
   color: white;
-  transition: height .5s;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a, a:active, a:focus, a:hover {
@@ -16,24 +14,37 @@ a, a:active, a:focus, a:hover {
   text-decoration: none;
 }
 
-a:hover {
-  
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.8);
+  background-image: url('./images/loading.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+}
+
+.outer-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.inner-wrapper {
+  position: relative;
+  margin-top: 150px;
+  width: 430px;
 }
 
 .app-logo {
   margin-bottom: 8px;
 }
 
-.body {
-  position: relative;
-  width: 430px;
-  display: flex;
-  flex-direction: column;
-}
-
 input.search-input {
   border: none;
-  flex: 1;
+  width: 100%;
   font-size: 16px;
   padding: 8px 5px;
   border-radius: 4px;
@@ -47,7 +58,7 @@ input.search-input:hover {
 
 .reasults-holder {
   position: absolute;
-  top: 34px;
+  top: 79px;
   background: #16191f;
   box-shadow: 0px 0px 15px rgba(0,0,0,.3);
   width: 100%;
@@ -72,4 +83,14 @@ input.search-input:hover {
 
 .page-footer a {
   margin-right: 20px;
+}
+
+@media (max-width: 430px) {
+  .outer-wrapper {
+    padding: 30px;
+  }
+  .inner-wrapper {
+    margin-top: 30px;
+    width: 100%;
+  }
 }
