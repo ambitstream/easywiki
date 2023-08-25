@@ -10,7 +10,11 @@ const Layout = (props: PropsWithChildren<LayoutProps>) => {
         <div className="outer-wrapper">
             <div className="inner-wrapper">
                 <header className="app-header">
-                    <img width={120} className="app-logo" src={logo} alt="Logo" />
+                    <img className="app-logo" src={logo} alt="Logo" />
+                    <div className="help-icon">?</div>
+                    <div className="help-bubble">
+                        In the modern information-oversaturated world, there isn't always the opportunity or time to study a particular Wikipedia article. Easywiki solves this problem. Choose the article of interest, and artificial intelligence will summarize it for you in a few sentences.
+                    </div>
                 </header>
                 {props.children}
                 </div>

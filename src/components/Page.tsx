@@ -65,7 +65,6 @@ const Page = ({ pageId }: Props) => {
 
                 setTitle(data.title);
                 setLoading(false);
-                // setContent('Abraham Lincoln was born in a log cabin in Kentucky to a poor family and was primarily self-educated. He became a lawyer and entered politics, eventually becoming the 16th president of the United States. Lincoln led the country through the Civil War, abolished slavery, and worked to preserve the Union.')
                 gptRequest(text);
             })
             .catch(error => {

@@ -1,5 +1,5 @@
 # Easywiki
-Easywiki represents an experimental application built upon ChatGPT that summarizes Wikipedia articles into a few sentences.
+Easywiki represents an experimental application built upon ChatGPT that summarizes Wikipedia articles in few sentences.
 
 ## Running
 1. clone this repo

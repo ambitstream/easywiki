@@ -38,8 +38,59 @@ a, a:active, a:focus, a:hover {
   width: 430px;
 }
 
+.app-header {
+  display: flex;
+}
+
 .app-logo {
   margin-bottom: 8px;
+  height: 29px;
+  width: auto;
+}
+
+.help-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.help-icon:hover + .help-bubble {
+  display: block;
+}
+
+.help-bubble {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  color: #16191f;
+  padding: 8px;
+  line-height: 18px;
+  font-size: 13px;
+  border-radius: 5px;
+  width: 260px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,.3);
+  left: 170px;
+  top: 8px;
+}
+
+.help-bubble::after {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 15px 0 15px;
+  border-color: #ffffff transparent transparent transparent;
+  display: block;
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 0;
 }
 
 input.search-input {

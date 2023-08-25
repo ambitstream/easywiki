@@ -23,6 +23,7 @@ const Search = () => {
     return (
         <Layout loading={false}>
             <input
+                placeholder="Search wikipedia"
                 type="text"
                 className="search-input"
                 value={q}
