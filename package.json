@@ -1,6 +1,7 @@
 {
   "name": "easywiki",
   "version": "0.1.0",
+  "homepage": "https://ambitstream.github.io/easywiki",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -17,7 +18,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build NODE_ENV=production",
+    "start": "react-scripts start NODE_ENV=development",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -42,6 +45,7 @@
   },
   "devDependencies": {
     "axios": "^1.4.0",
+    "gh-pages": "^6.0.0",
     "openai": "^4.0.0"
   }
 }

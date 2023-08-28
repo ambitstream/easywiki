@@ -1,3 +1,5 @@
+import { getRoot } from '../helpers/utils';
+
 interface Page {
     pageid: string;
     title: string;
@@ -13,7 +15,11 @@ const Results = ({ data }: Props) => {
     return (
         <div className="reasults-holder">
            {data.map((item, i) =>
-                <a href={`/?pageid=${item.pageid}`} key={item.pageid + i} className="result-item">
+                <a
+                    href={`${getRoot()}?pageid=${item.pageid}`}
+                    key={item.pageid + i}
+                    className="result-item"
+                >
                     {item.title}
                 </a>
             )}

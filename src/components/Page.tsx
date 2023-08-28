@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import OpenAI from "openai";
 import axios from "axios";
 import Layout from './Layout';
+import { getRoot } from '../helpers/utils';
 
 import loadingGif from '../images/loading.gif';
 
@@ -82,7 +83,7 @@ const Page = ({ pageId }: Props) => {
                 : content}
             </div>
             <div className="page-footer">
-                <a href="/">&larr; Back</a>
+                <a href={getRoot()}>&larr; Back</a>
                 {title ?
                     <a href={`https://en.wikipedia.org/wiki/${title}`} target="_blank">Full article</a>
                 : ''}
