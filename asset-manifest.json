@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/easywiki/static/css/main.1d62e37e.css",
-    "main.js": "/easywiki/static/js/main.f3cf0960.js",
+    "main.js": "/easywiki/static/js/main.f79b7df3.js",
     "static/js/787.efb9b08e.chunk.js": "/easywiki/static/js/787.efb9b08e.chunk.js",
     "static/media/loading.gif": "/easywiki/static/media/loading.1952935ed80fba5926fe.gif",
     "static/media/logo.png": "/easywiki/static/media/logo.c053552afbe38627856f.png",
     "index.html": "/easywiki/index.html",
     "main.1d62e37e.css.map": "/easywiki/static/css/main.1d62e37e.css.map",
-    "main.f3cf0960.js.map": "/easywiki/static/js/main.f3cf0960.js.map",
+    "main.f79b7df3.js.map": "/easywiki/static/js/main.f79b7df3.js.map",
     "787.efb9b08e.chunk.js.map": "/easywiki/static/js/787.efb9b08e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1d62e37e.css",
-    "static/js/main.f3cf0960.js"
+    "static/js/main.f79b7df3.js"
   ]
 }
