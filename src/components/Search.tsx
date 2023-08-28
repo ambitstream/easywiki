@@ -31,7 +31,7 @@ const Search = () => {
                 onChange={e => setQ(e.target.value)}
             />
             <Results data={results} />
-            (v2.5)
+            (v2.7)
         </Layout>
     );
 };
