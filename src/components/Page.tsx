@@ -23,7 +23,7 @@ const Page = ({ pageId }: Props) => {
         } else {
             getWiki();
         }
-    }, []);
+    });
 
     async function gptRequest(text: string) {
         if (!text) return false;
@@ -79,13 +79,13 @@ const Page = ({ pageId }: Props) => {
             <h3>{title}</h3>
             <div>
                 {thinking ?
-                    <img width={20} src={loadingGif} />
+                    <img width={20} src={loadingGif} alt="" />
                 : content}
             </div>
             <div className="page-footer">
                 <a href={getRoot()}>&larr; Back</a>
                 {title ?
-                    <a href={`https://en.wikipedia.org/wiki/${title}`} target="_blank">Full article</a>
+                    <a href={`https://en.wikipedia.org/wiki/${title}`} target="_blank" rel="noreferrer">Full article</a>
                 : ''}
             </div>
         </Layout>
