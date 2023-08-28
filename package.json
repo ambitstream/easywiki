@@ -22,6 +22,7 @@
     "deploy": "gh-pages -d build NODE_ENV=production",
     "start": "react-scripts start NODE_ENV=development",
     "build": "react-scripts build",
+    "lint": "eslint .",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

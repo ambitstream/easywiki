@@ -17,13 +17,8 @@ const Page = ({ pageId }: Props) => {
     const [thinking, setThinking] = useState(false);
 
     useEffect(() => {
-        if (pageId === '307') {
-            setTitle('Abraham Lincoln');
-            setContent('Abraham Lincoln was born in a log cabin in Kentucky to a poor family and was primarily self-educated. He became a lawyer and entered politics, eventually becoming the 16th president of the United States. Lincoln led the country through the Civil War, abolished slavery, and worked to preserve the Union.')
-        } else {
-            getWiki();
-        }
-    }, [pageId, getWiki]);
+        getWiki();
+    });
 
     async function gptRequest(text: string) {
         if (!text) return false;
