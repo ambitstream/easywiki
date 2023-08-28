@@ -23,7 +23,7 @@ const Page = ({ pageId }: Props) => {
         } else {
             getWiki();
         }
-    });
+    }, [pageId, getWiki]);
 
     async function gptRequest(text: string) {
         if (!text) return false;
