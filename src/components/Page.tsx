@@ -18,7 +18,7 @@ const Page = ({ pageId }: Props) => {
 
     useEffect(() => {
         getWiki();
-    });
+    }, []);
 
     async function gptRequest(text: string) {
         if (!text) return false;
@@ -38,6 +38,7 @@ const Page = ({ pageId }: Props) => {
         const result = chatCompletion.choices[0].message.content;
 
         if (result) {
+            console.log('set content')
             setContent(result);
         }
         setThinking(false);
